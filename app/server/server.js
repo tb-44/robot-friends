@@ -17,7 +17,7 @@ massive( process.env.CONNECTION_STRING ).then( dbInstance => {
 }).catch( err => console.log('Error on connecting to database:', err) );
 
 app.use(session({
-  secret: '@ThIS is the SeCrEt',
+  secret: '@f8!l m 0 Rtz',
   resave: false,
   saveUninitialized: false
 }));
@@ -28,12 +28,11 @@ app.use( passport.session() );
 passport.use( strategy );
 
 passport.serializeUser( (user, done) => {
-//   console.log("serializeUser:-------------------")
+  console.log("serializeUser:-------------------")
   done(null, { id: user.id, picture: user.picture })
 });
-
 passport.deserializeUser( (obj, done) => {
-//   console.log("deserializeUser:-------------------")
+  console.log("deserializeUser:-------------------")
   const db = app.get('db');
 
   db.users.find_user([ obj.id ]).then( response => {
