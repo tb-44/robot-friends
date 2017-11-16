@@ -1,0 +1,11 @@
+#Search__user {
+    height: 300px;
+    width: 250px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .user_image {
+    max-width: 100px;
+    max-height: 100px;
+  }
